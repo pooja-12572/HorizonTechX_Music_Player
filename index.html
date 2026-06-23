@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-player-container">
+        <div class="music-player">
+            <!-- Header -->
+            <div class="player-header">
+                <h1>🎵 Music Player</h1>
+                <label class="autoplay-toggle">
+                    <input type="checkbox" id="autoplay" checked>
+                    <span>Autoplay</span>
+                </label>
+            </div>
+
+            <!-- Album Art -->
+            <div class="album-art">
+                <img id="albumArt" src="https://via.placeholder.com/300?text=Music+Player" alt="Album Art">
+            </div>
+
+            <!-- Song Info -->
+            <div class="song-info">
+                <h2 id="songTitle">No Song Playing</h2>
+                <p id="artistName">Select a song to play</p>
+                <p id="duration">0:00 / 0:00</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <input 
+                    type="range" 
+                    id="progressBar" 
+                    class="progress-bar" 
+                    min="0" 
+                    max="100" 
+                    value="0"
+                >
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button id="prevBtn" class="control-btn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="playBtn" class="control-btn play-btn" title="Play/Pause">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="nextBtn" class="control-btn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button id="repeatBtn" class="control-btn" title="Repeat">
+                    <i class="fas fa-redo"></i>
+                </button>
+                <button id="shuffleBtn" class="control-btn" title="Shuffle">
+                    <i class="fas fa-random"></i>
+                </button>
+            </div>
+
+            <!-- Volume Control -->
+            <div class="volume-container">
+                <i class="fas fa-volume-down"></i>
+                <input 
+                    type="range" 
+                    id="volumeControl" 
+                    class="volume-slider" 
+                    min="0" 
+                    max="100" 
+                    value="70"
+                >
+                <i class="fas fa-volume-up"></i>
+                <span id="volumeValue">70%</span>
+            </div>
+
+            <!-- Playlist -->
+            <div class="playlist-section">
+                <h3>Playlist</h3>
+                <div class="playlist-container" id="playlistContainer">
+                    <!-- Songs will be added here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
